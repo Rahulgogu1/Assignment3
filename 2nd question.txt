@@ -1,0 +1,54 @@
+2.Check the commands for following requirements in mongodb:
+					a. how to insert a record in mongodb?
+					b. how to display the documents in mongodb?
+					c. how to update documents?
+					d. how to delete documents?
+
+
+
+A. How to insert a record in mongodb?
+
+               db.your-collection.insertOne({
+                                    key1: 'value1',
+                                    key2: 'value2',
+                                   // ... other fields
+                                    })
+
+
+B. How to display the documents in mongodb?
+
+           > Display all documents in a collection
+                                   
+                                                  db.your-collection.find()
+
+            > Display documents with a specific condition (replace 'your-collection' with the actual collection name)
+
+                                                    db.your-collection.find({ key: 'value' })
+
+
+C. How to update documents?
+
+              > Update a single document matching a condition (replace 'your-collection' with the actual collection name)
+                                            
+                                                     db.your-collection.updateOne(
+                                                     { key: 'value' },     # Condition
+                                                      { $set: { newKey: 'newValue' } }   # Update operation
+                                                       )
+
+                ------------>>>> Update multiple documents matching a condition
+
+                                                    db.your-collection.updateMany(
+                                                    { key: 'value' },     # Condition
+                                                    { $set: { newKey: 'newValue' } }   # Update operation
+                                                     )
+
+
+D. How to delete documents?
+
+              --------------->>># Delete a single document matching a condition 
+                                  
+                                         db.your-collection.deleteOne({ key: 'value' })
+
+              ------------->>> Delete multiple documents matching a condition
+
+                                        db.your-collection.deleteMany({ key: 'value' }
